@@ -1,0 +1,8 @@
+{
+  "detail": {
+    "action_name": "playbook check account login",
+    "playbook_input": "an example email",
+    "user": "xxxx",
+    "channel": "xxxx"
+  }
+}

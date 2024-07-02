@@ -1,0 +1,17 @@
+# This configuration file is used by AWS codebuild, for the test environment
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo "Installing build dependencies..."
+      - pip install -r configs/build_requirements.txt
+      - echo "Installing shared layer dependencies..."
+      - pip install -r configs/shared_layer_requirements.txt -t libraries/dependencies1/python/
+  build:
+    commands:
+      - python3 configs/build_yaml.py > template.yaml
+      - sam --version
+      - sam build --config-file configs/test-samconfig.toml
+      - sam deploy --config-file configs/test-samconfig.toml --s3-bucket xxxxxxxx --no-confirm-changeset --no-fail-on-empty-changeset

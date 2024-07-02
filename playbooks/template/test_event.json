@@ -1,0 +1,9 @@
+{
+  "detail": {
+    "action_name": "example event",
+    "address": "8.8.8.8",
+    "user": "xxxx",
+    "timestamp": "xxxx",
+    "channel": "xxxx"
+  }
+}
